@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a demonstration of a problem I encountered while working with `granite` gem. 
 
-Things you may want to cover:
+It includes 1 model, stubbed authentication and authorization, 1 BA and 1 projector that is used by that BA. 
 
-* Ruby version
+### Steps to reproduce the issue.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Set up the app, create and migrate the database.
+2. Run the dev server, visit the root path, click `Create User`.
+3. Introduce any change (controller, action, model, etc) and try to reload the page.
+4. See error
+```txt
+ArgumentError at /user/create
+A copy of AuthenticatableController has been removed from the module tree but is still active!
+```

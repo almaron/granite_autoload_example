@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title Try Granite
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    .header
+      h1 = link_to 'Try Granite', root_path
+      .user_bar
+        - if current_user
+          span.user_name = current_user.name
+    .content
+      = yield

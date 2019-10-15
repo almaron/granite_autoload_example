@@ -1,0 +1,5 @@
+.form.for-platform_cms
+  .form-fields
+    = form_for action, url: projector.performed_path, method: 'post' do |f|
+      = render 'fields', f: f
+      = render 'buttons', f: f
